@@ -14,14 +14,12 @@ const deviceConfig_t cfg = {
 
 Device* midicade;
 
-void setup()
-{
+void setup() {
     DEBUG_INIT();
     DEBUG_PRINTF("Midicade has been started in debug mode\n");
     midicade = new Device(&cfg);
 }
 
-void loop()
-{
+void loop() {
     midicade->UpdateState();
 }
