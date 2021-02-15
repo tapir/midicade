@@ -1,1 +1,5 @@
 .vscode/*
+hardware/fp*
+hardware/*-bak
+hardware/*cache*
+hardware/midicade
