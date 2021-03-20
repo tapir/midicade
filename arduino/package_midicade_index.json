@@ -11,12 +11,12 @@
                 {
                     "name": "Midicade MIDI Controller Boards",
                     "architecture": "avr",
-                    "version": "1.0.5",
+                    "version": "1.0.6",
                     "category": "Contributed",
-                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.5.zip",
-                    "archiveFileName": "Midicade-32U4-1.0.5.zip",
-                    "checksum": "SHA-256:6d4ff7a3589cfe0287c6a750cc94f4e972b3a1567799c9d1392f7aedab0fc21b",
-                    "size": "11260",
+                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.6.zip",
+                    "archiveFileName": "Midicade-32U4-1.0.6.zip",
+                    "checksum": "SHA-256:c1a7da0f09bb5c37960ddfaf65740de97d4d2ecba3b97d9f65b8734e22fdfba5",
+                    "size": "12968",
                     "boards": [
                         {
                             "name": "Midicade-32U4"
