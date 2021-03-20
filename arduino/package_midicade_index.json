@@ -1,12 +1,12 @@
 {
     "packages": [
         {
-            "name": "midicade-32u4",
+            "name": "Midicade MIDI Controller Boards",
             "maintainer": "Cosku Bas",
             "websiteURL": "https://github.com/tapir/midicade",
             "platforms": [
                 {
-                    "name": "Midicade MIDI Controller",
+                    "name": "Midicade 32U4",
                     "architecture": "avr",
                     "version": "1.0.1",
                     "category": "Contributed",
