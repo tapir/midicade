@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "Midicade Controller"
 Date "2021-02-14"
-Rev "1.0"
+Rev "1.1"
 Comp ""
 Comment1 "Decouple all VCC, AVCC, UVCC, AREF and VUSB pins of the MCU with 100nF caps."
 Comment2 "WS2812B-V5 LEDs have internal filter caps, no need for any external caps."
@@ -443,17 +443,17 @@ Wire Wire Line
 Wire Wire Line
 	1750 3850 1450 3850
 Text Label 1450 6650 2    50   ~ 0
-D14
-Text Label 1450 6550 2    50   ~ 0
-D15
-Text Label 1450 6450 2    50   ~ 0
-D16
-Text Label 1450 6350 2    50   ~ 0
-D17
-Text Label 1450 6250 2    50   ~ 0
 D18
-Text Label 1450 6150 2    50   ~ 0
+Text Label 1450 6550 2    50   ~ 0
 D19
+Text Label 1450 6450 2    50   ~ 0
+D20
+Text Label 1450 6350 2    50   ~ 0
+D21
+Text Label 1450 6250 2    50   ~ 0
+D22
+Text Label 1450 6150 2    50   ~ 0
+D23
 Text Label 1450 5650 2    50   ~ 0
 D6
 Text Label 1450 5550 2    50   ~ 0
@@ -612,7 +612,7 @@ F 3 "" H 3700 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 3600 5600 2    50   ~ 0
-D18
+D22
 Wire Wire Line
 	3800 5700 3700 5700
 Wire Wire Line
@@ -642,7 +642,7 @@ F 3 "" H 4450 5750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 4350 5600 2    50   ~ 0
-D19
+D23
 Wire Wire Line
 	4550 5700 4450 5700
 Wire Wire Line
@@ -732,7 +732,7 @@ F 3 "" H 3700 6250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 3600 6100 2    50   ~ 0
-D17
+D21
 Wire Wire Line
 	3800 6200 3700 6200
 Wire Wire Line
@@ -751,7 +751,7 @@ F 3 "" H 4450 6250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 4350 6100 2    50   ~ 0
-D14
+D18
 Wire Wire Line
 	4550 6200 4450 6200
 Wire Wire Line
@@ -841,7 +841,7 @@ F 3 "" H 3700 6750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 3600 6600 2    50   ~ 0
-D16
+D20
 Wire Wire Line
 	3800 6700 3700 6700
 Wire Wire Line
@@ -871,7 +871,7 @@ F 3 "" H 4450 6750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 4350 6600 2    50   ~ 0
-D15
+D19
 Wire Wire Line
 	4550 6700 4450 6700
 Wire Wire Line
@@ -879,10 +879,10 @@ Wire Wire Line
 Wire Wire Line
 	4550 6600 4350 6600
 $Comp
-L Connector_Generic:Conn_01x02 J12
-U 1 1 605DA76B
+L Connector_Generic:Conn_01x02 J11
+U 1 1 605E3C85
 P 5500 6600
-F 0 "J12" H 5580 6546 50  0000 L CNN
+F 0 "J11" H 5580 6546 50  0000 L CNN
 F 1 "Conn_01x02" H 5580 6501 50  0001 L CNN
 F 2 "Resources:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical_3D" H 5500 6600 50  0001 C CNN
 F 3 "~" H 5500 6600 50  0001 C CNN
@@ -890,54 +890,22 @@ F 3 "~" H 5500 6600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR060
-U 1 1 605DA771
+L power:GND #PWR061
+U 1 1 605E3C8B
 P 5200 6750
-F 0 "#PWR060" H 5200 6500 50  0001 C CNN
+F 0 "#PWR061" H 5200 6500 50  0001 C CNN
 F 1 "GND" H 5205 6577 50  0000 C CNN
 F 2 "" H 5200 6750 50  0001 C CNN
 F 3 "" H 5200 6750 50  0001 C CNN
 	1    5200 6750
 	1    0    0    -1  
 $EndComp
-Text Label 5100 6600 2    50   ~ 0
-D4
 Wire Wire Line
 	5300 6700 5200 6700
 Wire Wire Line
 	5200 6700 5200 6750
 Wire Wire Line
 	5300 6600 5100 6600
-$Comp
-L Connector_Generic:Conn_01x02 J11
-U 1 1 605E3C85
-P 6250 6600
-F 0 "J11" H 6330 6546 50  0000 L CNN
-F 1 "Conn_01x02" H 6330 6501 50  0001 L CNN
-F 2 "Resources:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical_3D" H 6250 6600 50  0001 C CNN
-F 3 "~" H 6250 6600 50  0001 C CNN
-	1    6250 6600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR061
-U 1 1 605E3C8B
-P 5950 6750
-F 0 "#PWR061" H 5950 6500 50  0001 C CNN
-F 1 "GND" H 5955 6577 50  0000 C CNN
-F 2 "" H 5950 6750 50  0001 C CNN
-F 3 "" H 5950 6750 50  0001 C CNN
-	1    5950 6750
-	1    0    0    -1  
-$EndComp
-Text Label 5850 6600 2    50   ~ 0
-D12
-Wire Wire Line
-	6050 6700 5950 6700
-Wire Wire Line
-	5950 6700 5950 6750
-Wire Wire Line
-	6050 6600 5850 6600
 $Comp
 L Connector_Generic:Conn_01x02 J13
 U 1 1 605EE250
@@ -2022,6 +1990,38 @@ F 1 "Conn_01x02" H 4830 6001 50  0001 L CNN
 F 2 "Resources:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical_3D" H 4750 6100 50  0001 C CNN
 F 3 "~" H 4750 6100 50  0001 C CNN
 	1    4750 6100
+	1    0    0    -1  
+$EndComp
+Text Label 5100 6600 2    50   ~ 0
+D12
+Wire Wire Line
+	6050 6600 5850 6600
+Wire Wire Line
+	5950 6700 5950 6750
+Wire Wire Line
+	6050 6700 5950 6700
+Text Label 5850 6600 2    50   ~ 0
+D4
+$Comp
+L power:GND #PWR060
+U 1 1 605DA771
+P 5950 6750
+F 0 "#PWR060" H 5950 6500 50  0001 C CNN
+F 1 "GND" H 5955 6577 50  0000 C CNN
+F 2 "" H 5950 6750 50  0001 C CNN
+F 3 "" H 5950 6750 50  0001 C CNN
+	1    5950 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J12
+U 1 1 605DA76B
+P 6250 6600
+F 0 "J12" H 6330 6546 50  0000 L CNN
+F 1 "Conn_01x02" H 6330 6501 50  0001 L CNN
+F 2 "Resources:JST_SH_BM02B-SRSS-TB_1x02-1MP_P1.00mm_Vertical_3D" H 6250 6600 50  0001 C CNN
+F 3 "~" H 6250 6600 50  0001 C CNN
+	1    6250 6600
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
