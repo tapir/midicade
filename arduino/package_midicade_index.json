@@ -13,10 +13,10 @@
                     "help": {
                         "online": "https://github.com/tapir/midicade"
                     },
-                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.0.zip",
-                    "archiveFileName": "Midicade-32U4-1.0.0.zip",
-                    "checksum": "SHA-256:28cdf1da3af8d24799a6993ca52af1e5671d7178e0312e99479eeb7338cee6de",
-                    "size": "11515",
+                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.1.zip",
+                    "archiveFileName": "Midicade-32U4-1.0.1.zip",
+                    "checksum": "SHA-256:77c806c51e7d0b39402e69ab0e91c744b0634fb3f37773f0982064fa5c15391d",
+                    "size": "11287",
                     "boards": [
                         {
                             "name": "Midicade 32U4"
