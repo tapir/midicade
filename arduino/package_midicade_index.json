@@ -1,25 +1,25 @@
 {
     "packages": [
         {
-            "name": "Midicade MIDI Controller Boards",
+            "name": "Midicade",
             "maintainer": "Cosku Bas",
             "websiteURL": "https://github.com/tapir/midicade",
             "platforms": [
                 {
-                    "name": "Midicade 32U4",
+                    "name": "Midicade MIDI Controller Boards",
                     "architecture": "avr",
-                    "version": "1.0.1",
+                    "version": "1.0.2",
                     "category": "Contributed",
                     "help": {
                         "online": "https://github.com/tapir/midicade"
                     },
-                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.1.zip",
-                    "archiveFileName": "Midicade-32U4-1.0.1.zip",
-                    "checksum": "SHA-256:77c806c51e7d0b39402e69ab0e91c744b0634fb3f37773f0982064fa5c15391d",
+                    "url": "https://raw.githubusercontent.com/tapir/midicade/master/arduino/Midicade-32U4-1.0.2.zip",
+                    "archiveFileName": "Midicade-32U4-1.0.2.zip",
+                    "checksum": "SHA-256:f71dbd6be9d3d173302a1a29c295a52952540291e9d80bd802bf26cd25251051",
                     "size": "11287",
                     "boards": [
                         {
-                            "name": "Midicade 32U4"
+                            "name": "Midicade-32U4"
                         }
                     ],
                     "toolsDependencies": []
