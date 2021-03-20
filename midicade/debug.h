@@ -5,22 +5,7 @@
 #ifndef __DEBUG_H__
 #define __DEBUG_H__
 
-#define BUTTON_01 0
-#define BUTTON_02 1
-#define BUTTON_03 2
-#define BUTTON_04 3
-#define BUTTON_05 4
-#define BUTTON_06 5
-#define BUTTON_07 6
-#define BUTTON_08 7
-#define BUTTON_09 8
-#define BUTTON_10 9
-#define BUTTON_11 10
-#define BUTTON_12 11
-#define BUTTON_13 12
-#define BUTTON_14 13
-#define BUTTON_15 14
-#define BUTTON_16 15
+//#define MIDICADE_DEBUG 1
 
 #ifdef MIDICADE_DEBUG
 
