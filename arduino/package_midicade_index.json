@@ -8,7 +8,7 @@
                 {
                     "name": "Midicade MIDI Controller",
                     "architecture": "avr",
-                    "version": "1.0.0",
+                    "version": "1.0.1",
                     "category": "Contributed",
                     "help": {
                         "online": "https://github.com/tapir/midicade"
