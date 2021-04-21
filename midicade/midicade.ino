@@ -5,7 +5,7 @@
 #include "debug.h"
 #include "device.h"
 
-Device *midicade;
+Device* midicade;
 
 void setup() {
     DEBUG_INIT();

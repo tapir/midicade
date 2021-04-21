@@ -12,7 +12,7 @@ Device::Device() {
     switch (status) {
     case CONFIG_CUSTOM:
         // Custom config
-        noteChannel = fetchByte(ADDR_BASE_CHANNEL);
+        noteChannel    = fetchByte(ADDR_BASE_CHANNEL);
         controlChannel = noteChannel + 1;
         for (int i = 0; i < DEV_MAX_BTN; i++) {
             btnConfig[i] = fetchButtonConfig(i);
@@ -77,7 +77,7 @@ Device::Device() {
     FastLED.addLeds<WS2812B, PIN_LED_ARRAY_3, GRB>(ledArrays[2], DEV_LEDS_PER_ARRAY);
     FastLED.addLeds<WS2812B, PIN_LED_ARRAY_4, GRB>(ledArrays[3], DEV_LEDS_PER_ARRAY);
     for (int i = 0; i < DEV_MAX_BTN * 2 - 1; i += 2) {
-        int button = i / 2;
+        int button        = i / 2;
         ledStates[button] = &(ledArrays[ledPinMap[i]][ledPinMap[i + 1]]);
         setButtonLedReleased(button);
     }
@@ -92,11 +92,16 @@ Device::~Device() {
 }
 
 void Device::UpdateState() {
+    // Flush MIDI input
+    midiEventPacket_t rx;
+    do {
+        rx = MidiUSB.read();
+    } while (rx.header != 0);
+
     // Main loop
     for (int i = 0; i < DEV_MAX_BTN; i++) {
-        // Update button states
-        ezButton *b = btnStates[i];
-        b->loop();
+        ezButton* b = btnStates[i];
+        btnStates[i]->loop();
 
         // Process pressed
         if (b->isPressed()) {
@@ -118,26 +123,26 @@ void Device::UpdateState() {
     }
 
     // We only check once for programming mode, right after power up
-    if (once) {
-        once = false;
+    // if (once) {
+    //     once = false;
 
-        // 3 corner buttons needs to be in pressed state
-        // to activate programming mode during boot (Buttons 1, 4, 16)
-        if (!btnStates[0]->getState() && !btnStates[3]->getState() && !btnStates[15]->getState()) {
-            runProgrammer();
-        }
-    }
+    //     // 3 corner buttons needs to be in pressed state
+    //     // to activate programming mode during boot (Buttons 1, 4, 16)
+    //     if (!btnStates[0]->getState() && !btnStates[3]->getState() && !btnStates[15]->getState()) {
+    //         runProgrammer();
+    //     }
+    // }
 }
 
 void Device::setButtonLedPressed(uint8_t button) {
-    CRGB color = btnConfig[button].colorPressed;
+    CRGB color           = btnConfig[button].colorPressed;
     *(ledStates[button]) = color;
     FastLED.show();
     DEBUG_PRINTF("Button %d LED color has been set to pressed: 0x%02x%02x%02x\n", button + 1, color[0], color[1], color[2]);
 }
 
 void Device::setButtonLedReleased(uint8_t button) {
-    CRGB color = btnConfig[button].colorReleased;
+    CRGB color           = btnConfig[button].colorReleased;
     *(ledStates[button]) = color;
     FastLED.show();
     DEBUG_PRINTF("Button %d LED color has been set to released: 0x%02x%02x%02x\n", button + 1, color[0], color[1], color[2]);
@@ -152,9 +157,9 @@ void Device::setButtonLedColor(uint8_t button, CRGB color) {
 void Device::midiNoteOn(uint8_t button) {
     midiEventPacket_t noteOn = {
         .header = 0x09,
-        .byte1 = 0x90 | noteChannel,
-        .byte2 = btnConfig[button].midiNote,
-        .byte3 = btnConfig[button].midiVelocity,
+        .byte1  = 0x90 | noteChannel,
+        .byte2  = btnConfig[button].midiNote,
+        .byte3  = btnConfig[button].midiVelocity,
     };
     MidiUSB.sendMIDI(noteOn);
     MidiUSB.flush();
@@ -164,9 +169,9 @@ void Device::midiNoteOn(uint8_t button) {
 void Device::midiNoteOff(uint8_t button) {
     midiEventPacket_t noteOff = {
         .header = 0x08,
-        .byte1 = 0x80 | noteChannel,
-        .byte2 = btnConfig[button].midiNote,
-        .byte3 = btnConfig[button].midiVelocity,
+        .byte1  = 0x80 | noteChannel,
+        .byte2  = btnConfig[button].midiNote,
+        .byte3  = btnConfig[button].midiVelocity,
     };
     MidiUSB.sendMIDI(noteOff);
     MidiUSB.flush();
@@ -176,9 +181,9 @@ void Device::midiNoteOff(uint8_t button) {
 void Device::midiControlOn(uint8_t button) {
     midiEventPacket_t controlOn = {
         .header = 0x0B,
-        .byte1 = 0xB0 | controlChannel,
-        .byte2 = btnConfig[button].midiNote,
-        .byte3 = 0x7F,
+        .byte1  = 0xB0 | controlChannel,
+        .byte2  = btnConfig[button].midiNote,
+        .byte3  = 0x7F,
     };
     MidiUSB.sendMIDI(controlOn);
     MidiUSB.flush();
@@ -188,9 +193,9 @@ void Device::midiControlOn(uint8_t button) {
 void Device::midiControlOff(uint8_t button) {
     midiEventPacket_t controlOff = {
         .header = 0x0B,
-        .byte1 = 0xB0 | controlChannel,
-        .byte2 = btnConfig[button].midiNote,
-        .byte3 = 0x00,
+        .byte1  = 0xB0 | controlChannel,
+        .byte2  = btnConfig[button].midiNote,
+        .byte3  = 0x00,
     };
     MidiUSB.sendMIDI(controlOff);
     MidiUSB.flush();

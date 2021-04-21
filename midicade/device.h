@@ -99,36 +99,36 @@ private:
     typedef struct btnConfig_t {
         uint8_t midiNote;
         uint8_t midiVelocity;
-        CRGB colorPressed;
-        CRGB colorReleased;
-        bool momentary; // Enable/disable CC messages
+        CRGB    colorPressed;
+        CRGB    colorReleased;
+        bool    momentary; // Enable/disable CC messages
     };
 
     // States
-    ezButton *btnStates[DEV_MAX_BTN];
-    CRGB *ledStates[DEV_MAX_BTN];
-    CRGB ledArrays[DEV_MAX_LED_ARRAYS][DEV_LEDS_PER_ARRAY];
+    ezButton* btnStates[DEV_MAX_BTN];
+    CRGB*     ledStates[DEV_MAX_BTN];
+    CRGB      ledArrays[DEV_MAX_LED_ARRAYS][DEV_LEDS_PER_ARRAY];
 
     // Defaults
-    uint8_t noteChannel = MIDI_CHANNEL_BASE;
-    uint8_t controlChannel = MIDI_CHANNEL_BASE + 1;
+    uint8_t     noteChannel            = MIDI_CHANNEL_BASE;
+    uint8_t     controlChannel         = MIDI_CHANNEL_BASE + 1;
     btnConfig_t btnConfig[DEV_MAX_BTN] = {
-        { .midiNote = 48, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_01
-        { .midiNote = 49, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_02
-        { .midiNote = 50, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_03
-        { .midiNote = 51, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_04
-        { .midiNote = 44, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_05
-        { .midiNote = 45, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_06
-        { .midiNote = 46, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_07
-        { .midiNote = 47, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_08
-        { .midiNote = 40, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_09
-        { .midiNote = 41, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_10
-        { .midiNote = 42, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_11
-        { .midiNote = 43, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_12
-        { .midiNote = 36, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_13
-        { .midiNote = 37, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_14
-        { .midiNote = 38, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_15
-        { .midiNote = 39, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Black, .momentary = true }, // BUTTON_16
+        { .midiNote = 48, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Red, .momentary = true },    // BUTTON_01
+        { .midiNote = 49, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Red, .momentary = true },    // BUTTON_02
+        { .midiNote = 50, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Red, .momentary = true },    // BUTTON_03
+        { .midiNote = 51, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Red, .momentary = true },    // BUTTON_04
+        { .midiNote = 44, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Blue, .momentary = true },   // BUTTON_05
+        { .midiNote = 45, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Blue, .momentary = true },   // BUTTON_06
+        { .midiNote = 46, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Blue, .momentary = true },   // BUTTON_07
+        { .midiNote = 47, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Blue, .momentary = true },   // BUTTON_08
+        { .midiNote = 40, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Green, .momentary = true },  // BUTTON_09
+        { .midiNote = 41, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Green, .momentary = true },  // BUTTON_10
+        { .midiNote = 42, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Green, .momentary = true },  // BUTTON_11
+        { .midiNote = 43, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Green, .momentary = true },  // BUTTON_12
+        { .midiNote = 36, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Yellow, .momentary = true }, // BUTTON_13
+        { .midiNote = 37, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Yellow, .momentary = true }, // BUTTON_14
+        { .midiNote = 38, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Yellow, .momentary = true }, // BUTTON_15
+        { .midiNote = 39, .midiVelocity = 127, .colorPressed = CRGB::Cyan, .colorReleased = CRGB::Yellow, .momentary = true }, // BUTTON_16
     };
 
     // Programming mode
@@ -147,10 +147,10 @@ private:
     void midiControlOff(uint8_t button);
 
     // EEPROM routines
-    static void storeButtonConfig(uint8_t button, btnConfig_t config);
+    static void        storeButtonConfig(uint8_t button, btnConfig_t config);
     static btnConfig_t fetchButtonConfig(uint8_t button);
-    static void storeByte(uint16_t addr, uint8_t data);
-    static uint8_t fetchByte(uint16_t addr);
+    static void        storeByte(uint16_t addr, uint8_t data);
+    static uint8_t     fetchByte(uint16_t addr);
 };
 
 #endif
