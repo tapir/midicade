@@ -23,3 +23,4 @@ TODO
 - Document EEPROM structure and default values
 - Document general hardware info
 - Include STEP files and put a link to OnShape files
+- Change to Sparkfun or Polulu bootloader to get rid of the 8 second boot delay
